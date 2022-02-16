@@ -1,13 +1,13 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
+/// @title EC
+/// @author Emmanuel
+/// @notice an interface that guides the general election
+/// @dev In a real life scenario, this is the electoral commission
+/// All contracts that implement this are the activities carried 
+/// out by the electoral commission
 
-/* 
-an interface that guides the general election
-In a real life scenario, this is the electoral commission
-All contracts that implement this are the activities carried 
-out by the electoral commission
-*/
 
 abstract contract EC{
     /*
@@ -59,6 +59,20 @@ abstract contract EC{
     modifier validateVoter(){
         require ((!voter.hasVoted)&& voter.vote == 0 && voter.voterId == msg.sender, "invalid credentials");
         _;
+    }
+
+    /*
+     @notice ensure that the party passed into [voteForParty] and [getPartyVotes] is in the party list
+     */
+    function validateParty(string memory _party) public view  returns (bool){
+        for (uint256 i = 0; i < parties.length; i++) {
+          // hash strings in parties and _party before comparing to escape incompartible types comparison
+          if (keccak256(abi.encodePacked(parties[i])) == keccak256(abi.encodePacked(_party))) {
+              return true;
+            }
+
+        }
+        return false;
     }
 
     /*
