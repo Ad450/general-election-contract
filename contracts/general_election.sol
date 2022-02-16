@@ -2,15 +2,15 @@
 pragma solidity ^0.8.0;
 import "./electoral_commission.sol";
 
-/*   
-This contract will simulate a general election
-Voters will be validated and allowed to vote for 
-only one participating candidate.
-Voters will see the total votes of each candidate before 
-and after casting their votes
 
-
-*/
+/// @title GeneralElectiom
+/// @author Emmanuel
+/// @notice an implementation of EC
+/// @dev This contract will simulate a general election
+/// Voters will be validated and allowed to vote for 
+/// only one participating candidate.
+/// Voters will see the total votes of each candidate before 
+/// and after casting their votes
 
 contract GeneralElection is EC {
 
@@ -31,10 +31,10 @@ contract GeneralElection is EC {
 
 
   /*
-     @notice will be replaced with the actual ballotBox object in any children
-     contract
-      */
-      BallotBox private ballotBox;
+  @notice will be replaced with the actual ballotBox object in any children
+  contract
+  */
+  BallotBox private ballotBox;
 
 
     /* 
@@ -43,10 +43,6 @@ contract GeneralElection is EC {
     */
     Voter private voter;
 
-     /* 
-     @notice this validates all voters by checking for the address, hasVoted and vote
-      */
-   
 
     /*
     @notice gets the total votecast
