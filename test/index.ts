@@ -1,19 +1,8 @@
-import { expect } from "chai";
-import { ethers } from "hardhat";
+// import { expect } from "chai";
+// import { MockContract } from "ethereum-waffle";
+// import { ethers } from "hardhat";
 
-describe("Greeter", function () {
-  it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
-    await greeter.deployed();
+// const address = 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
-    expect(await greeter.greet()).to.equal("Hello, world!");
-
-    const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
-
-    // wait until the transaction is mined
-    await setGreetingTx.wait();
-
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
-  });
-});
+// eslint-disable-next-line prettier/prettier
+describe("GeneralElection", () => {});
