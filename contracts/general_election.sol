@@ -84,9 +84,12 @@ contract GeneralElection is EC {
      */
 
      function voteForParty(string memory _party) external override validateVoter {
+       if(validateParty(_party)){
+
        // increase the vote of the party by 1
        votecast[_party] += 1;
-      emit Voted({from : voter.voterId, message:"vote recorded successfuly"});
+       emit Voted({from : voter.voterId, message:"vote recorded successfuly"});
+       }
      }
 
  
