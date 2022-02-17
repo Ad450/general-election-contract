@@ -53,13 +53,6 @@ abstract contract EC{
     */
     Voter private voter;
 
-     /* 
-     @notice this validates all voters by checking for the address, hasVoted and vote
-    */
-    // modifier validateVoter(){
-    //     require (voter.vote == 0 && voter.voterId == msg.sender, "invalid credentials");
-    //     _;
-    // }
 
     /*
      @notice ensure that the party passed into [voteForParty] and [getPartyVotes] is in the party list
