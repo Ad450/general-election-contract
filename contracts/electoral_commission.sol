@@ -92,4 +92,5 @@ abstract contract EC{
      */
 
      function voteForParty(string memory _party) external virtual;
+
 }
