@@ -1,14 +1,1 @@
-{
-   
-   
-    "trailingComma": "all",
-    
-    "overrides": [
-      {
-        "files": "*.sol",
-        "options": {
-          "explicitTypes": "always"
-        }
-      }
-    ]
-  }
+{}
