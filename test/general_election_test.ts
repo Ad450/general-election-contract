@@ -8,6 +8,7 @@ import { GeneralElection } from "../typechain/GeneralElection";
 // eslint-disable-next-line prettier/prettier
 describe("GeneralElection", () => {
   let generalElection: GeneralElection;
+  const testParty = "PPP";
 
   beforeEach(async () => {
     // const signers = await ethers.getSigners();
@@ -30,9 +31,17 @@ describe("GeneralElection", () => {
     expect(result).equals(0);
   });
 
+  it("should return  0 for all parties at the start of elections", async () => {
+    // act
+    const result = await generalElection.getPartyVotes(testParty);
+
+    // assert
+    expect(result).equals(0);
+  });
+
   it("should increase the votes of a party by 1 when a someone votes", async () => {
     // act
-    await generalElection.voteForParty("PPP");
+    await generalElection.voteForParty(testParty);
     const result = await generalElection.getTotalVotes();
     const partyResult = await generalElection.getPartyVotes("PPP");
 
