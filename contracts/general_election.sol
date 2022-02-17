@@ -85,6 +85,7 @@ contract GeneralElection is EC {
 
        // increase the vote of the party by 1
        votecast[_party] += 1;
+       ballotBox.totalVotes +=1;
       
        emit Voted({from : voter.voterId, message:"vote recorded successfuly"});
        }
