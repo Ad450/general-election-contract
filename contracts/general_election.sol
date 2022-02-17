@@ -79,11 +79,13 @@ contract GeneralElection is EC {
     @external cannot be called within this contract 
      */
 
-     function voteForParty(string memory _party) external override validateVoter {
+     function voteForParty(string memory _party) external override  {
+       require(voter.voterId == msg.sender, "invalid credentials");
        if(validateParty(_party)){
 
        // increase the vote of the party by 1
        votecast[_party] += 1;
+      
        emit Voted({from : voter.voterId, message:"vote recorded successfuly"});
        }
      }
