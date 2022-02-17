@@ -19,7 +19,7 @@ describe("GeneralElection", () => {
     (await generalElection).deployed();
   });
 
-  it("should deploy contract successfuly", async () => {
+  it("should deploy contract successfully", async () => {
     console.log(`deployed at ${generalElection.address}`);
   });
 
@@ -31,7 +31,7 @@ describe("GeneralElection", () => {
     expect(result).equals(0);
   });
 
-  it("should return  0 for all parties at the start of elections", async () => {
+  it("should return  0 for all parties at the start of the elections", async () => {
     // act
     const result = await generalElection.getPartyVotes(testParty);
 
