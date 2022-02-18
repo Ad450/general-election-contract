@@ -9,4 +9,5 @@ npx hardhat run --network localhost scripts/deploy.ts
 
 # To compile the smart contracts
 npx hardhat compile
+# Repo was initially named `hardhat-voting-dapp`, this has been changed to `general-election-contract`
 
