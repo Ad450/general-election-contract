@@ -29,7 +29,8 @@ const config: HardhatUserConfig = {
     ropsten: {
       url: process.env.ROPSTEN_URL || "",
       // eslint-disable-next-line prettier/prettier
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
   },
   gasReporter: {
